@@ -2,18 +2,18 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: sonarr
-  namespace: argocd
+  namespace: media
   finalizers:
   - resources-finalizer.argocd.argoproj.io
 spec:
   destination:
     server: https://kubernetes.default.svc
-    namespace: media-apps
+    namespace: media
   project: default
   source:
-    repoURL: https://gitlab.irdeto.com/itv/itv-pnp-k8s-apps.git
+    repoURL: https://github.com/dudilander/arr-stack-k8s-argo-apps.git
     targetRevision: main
-    path: media-apps/sonarr
+    path: media/sonarr
     plugin:
       env:
         - name: ENV_NAME
