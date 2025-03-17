@@ -1,0 +1,117 @@
+accountId: "992382847659"
+environment: dub-ditv-pnp
+sslCertArn: "arn:aws:acm:eu-west-1:992382847659:certificate/92824d97-2254-4ece-b0bc-7e5bbdf17afe"
+region: eu-west-1
+product: "itv-pnp"
+deployment: dev
+customer: itv
+clusterEndpoint: "https://96A7BE9AF04D053118D25EE766251189.yl4.eu-west-1.eks.amazonaws.com"
+internalSupportIngress:
+  ingressClass: alb
+  ingressScheme: internal
+  ingressGroup: internal-support
+  loadBalancerNameSuffix: internal-support
+  targetType: ip
+  sslPolicy: ELBSecurityPolicy-TLS-1-2-2017-01
+  resourceTags: "ird:tech:product=itv-pnp,ird:tech:customer=itv,ird:tech:deployment-method=aws-lb-controller,ird:tech:env=dub-ditv-pnp,ird:tech:deployment=dev,ird:tech:owner=ve_devops@irdeto.com,ird:tech:region=dub,ird:tech:aws-region=eu-west-1,map-migrated=mig35278,Prometheus=true"
+monitoring:
+  kubePrometheusStack:
+    chartVersion: "44.2.1"
+    defaultRules:
+      create: true
+    grafana:
+      domainName: "mon.itvpnp.ott.irdeto.com"
+  namespace: monitoring
+logging:
+  loki:
+    chartVersion: "5.15.0"
+    saName: loki-sa
+    bucketSuffix:
+      chunks: "goanna-loki-chunks"
+      ruler: "goanna-loki-ruler"
+      admin: "goanna-loki-admin"
+  lokiDistributed:
+    chartVersion: "0.78.2"
+storage:
+  mimir:
+    chartVersion: "5.2.1"
+    domainName: "mimir.itvpnp.ott.irdeto.com"
+gitlabRunner:
+  namespace: utilities
+  chartVersion: "0.62.0"
+  runnersImage: "docker:24.0.2"
+staticSecrets:
+  chartVersion: "1.0.0"
+mediamanager:
+  namespace: mediamanager
+  preferredNetworks: "10.23"
+  consul:
+    chartVersion: "0.32.1"
+    domainName: "consul.itvpnp.ott.irdeto.com"
+  activemq:
+    chartVersion: "0.2.0"
+    domainName: "amq-int.itvpnp.ott.irdeto.com"
+    requestsMemory: 1024Mi
+    requestsCpu: 1024m
+    limitsMemory: 1024Mi
+    limitsCpu: 1024m
+    image:
+      repository: "992382847659.dkr.ecr.eu-west-1.amazonaws.com/activemq"
+      tag: "10.3.1.30"
+    resourceTags: "ird:tech:tgname=dub-ditv-activemq,ird:tech:product=itv-pnp,ird:tech:customer=itv,ird:tech:deployment-method=k8s,ird:tech:env=dub-ditv-pnp,ird:tech:deployment=dev,ird:tech:owner=ve_devops@irdeto.com,ird:tech:region=dub,ird:tech:aws-region=eu-west-1,map-migrated=mig35278"
+
+  datastore:
+    chartVersion: "0.1.0"
+    domainName: "gof-datastore.itvpnp.ott.irdeto.com"
+    image:
+      repository: "992382847659.dkr.ecr.eu-west-1.amazonaws.com/datastore"
+      tag: "10.4.0.285"
+  gateway:
+    chartVersion: "0.1.0"
+    domainName: "gof-gateway.itvpnp.ott.irdeto.com"
+    image:
+      repository: "992382847659.dkr.ecr.eu-west-1.amazonaws.com/gateway"
+      tag: "10.4.0.322"
+  fileservice:
+    chartVersion: "0.1.0"
+    image:
+      repository: "992382847659.dkr.ecr.eu-west-1.amazonaws.com/file-service"
+      tag: "10.6.0.178"
+  opensearch:
+    namespace: mediamanager
+    chartVersion: "0.1.0"
+    image:
+      repository: "992382847659.dkr.ecr.eu-west-1.amazonaws.com/opensearch-service"
+      tag: "10.6.0.73"
+    host: "vpc-dub-ditv-ybrxifeavyzgeyfq6yp6ww66h4.eu-west-1.es.amazonaws.com"
+  mmr:
+    chartVersion: "0.1.0"
+    domainName: "mmr-docker.itvpnp.ott.irdeto.com"
+    mysqlHost: "dub-ditv-rds-cluster.cluster-cjas2i2emrzl.eu-west-1.rds.amazonaws.com"
+    image:
+      repository: "992382847659.dkr.ecr.eu-west-1.amazonaws.com/mediamanager-docker"
+      tag: "10.5.0.409"
+  wfe:
+    chartVersion: "0.1.0"
+    image:
+      repository: "992382847659.dkr.ecr.eu-west-1.amazonaws.com/workflow-engine-docker"
+      tag: "10.6.0.422"
+  opentelemetry:
+    chartVersion: "0.90.1"
+grafana:
+  enabled: false
+  skipTlsVerify: true
+  defaultDashboardsEnabled: false
+  adminPassword: prom-operator
+splunkOtelCollector:
+  ecrBase: quay.io
+  image:
+    repo: signalfx/splunk-otel-collector
+    tag: 0.100.0
+  tokenName: itv_pnp_ingest
+karpenter:
+  nodes:
+    chartVersion: "1.0.9"
+cloudhealth:
+  chartVersion: "4.6.5"
+  namespace: "cloudhealth"
