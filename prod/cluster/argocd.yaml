@@ -8,12 +8,12 @@ metadata:
 spec:
   destination:
     server: https://kubernetes.default.svc
-    namespace: prod/cluster-components/argocd
+    namespace: argocd
   project: default
   source:
     repoURL: https://github.com/dudilander/arr-stack-k8s-argo-apps.git
     targetRevision: main
-    path: prod/cluster-components/argocd
+    path: prod/cluster-components/argocd-apps
     plugin:
       name: helmfile
   syncPolicy:

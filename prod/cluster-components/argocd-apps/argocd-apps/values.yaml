@@ -46,7 +46,7 @@
 # -- Deploy Argo CD Projects within this helm release
 # @default -- `{}` (See [values.yaml])
 ## Ref: https://github.com/argoproj/argo-cd/blob/master/docs/operator-manual/
-projects: {}
+ projects: {}
 #  guestbook:
 #    namespace: argocd
 #    additionalLabels: {}
@@ -93,7 +93,7 @@ projects: {}
 # -- Deploy Argo CD ApplicationSets within this helm release
 # @default -- `{}` (See [values.yaml])
 ## Ref: https://argo-cd.readthedocs.io/en/stable/operator-manual/applicationset/
-applicationsets: {}
+ applicationsets: {}
 #  guestbook:
 #    namespace: argocd
 #    additionalLabels: {}

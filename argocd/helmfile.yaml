@@ -1,0 +1,13 @@
+environments:
+  #prod:
+  default:
+    values:
+      - ../prod/global-values.yaml
+
+---
+releases:
+  - name: argocd
+    chart: ../base/argocd
+    namespace: {{ .Values.argocd.namespace }}
+    values:
+      - ./argocd/values.yaml

@@ -10,14 +10,8 @@ releases:
     chart: ../../../base/namespace
     namespace: {{ .Values.media.namespace }}
 
-  - name: argocd
-    chart: ../../../base/argocd/argocd
-    namespace: {{ .Values.argocd.namespace }}
-    values:
-      - ./argocd/values.yaml
-
-  - name: argocd-apps
-    chart: ../../../base/argocd/argocd-apps
+  - name: app-of-apps
+    chart: ../../../base/argocd-apps
     namespace: {{ .Values.argocd.namespace }}
     values:
       - ./argocd-apps/values.yaml
