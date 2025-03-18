@@ -1,0 +1,4 @@
+radarr:
+ image:
+  repository: lscr.io/linuxserver/radarr
+  tag: latest

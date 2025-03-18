@@ -1,0 +1,4 @@
+overseerr:
+ image:
+  repository: lscr.io/linuxserver/overseerr
+  tag: latest

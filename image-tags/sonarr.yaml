@@ -1,0 +1,4 @@
+sonarr:
+ image:
+  repository: lscr.io/linuxserver/sonarr
+  tag: latest

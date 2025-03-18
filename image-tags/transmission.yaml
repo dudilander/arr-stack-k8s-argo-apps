@@ -1,0 +1,4 @@
+transmission:
+ image:
+  repository: lscr.io/linuxserver/transmission
+  tag: latest

@@ -64,19 +64,21 @@ probes:
 persistence:
   config:
     enabled: true
+    emptyDir: false
     mountPath: /config
     subPath: sonarr
     accessMode: ReadWriteOnce
     size: 100Gi
-    existingClaim: nfs-mount-config
+    existingClaim: config
 
   media:
     enabled: true
+    emptyDir: false
     mountPath: /series
     subPath: series
     accessMode: ReadWriteOnce
     size: 100Gi
-    existingClaim: nfs-mount-media
+    existingClaim: media
 
   transmission:
     enabled: true
@@ -86,7 +88,7 @@ persistence:
     size: 100Gi
     ## Do not delete the pvc upon helm uninstall
     skipuninstall: false
-    existingClaim: nfs-mount-transmission
+    existingClaim: transmission
 
 metrics:
   # -- Enable and configure Exportarr sidecar and Prometheus serviceMonitor.

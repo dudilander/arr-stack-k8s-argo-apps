@@ -1,0 +1,8 @@
+# server -- NFS Server
+server: 192.168.1.9
+# path -- NFS remote path
+path: /volume1/cluster/arr-configs
+# size -- NFS share size
+size: "100Gi"
+# volumeName -- PersistentVolume Name
+volumeName: "config.dudinet.local"

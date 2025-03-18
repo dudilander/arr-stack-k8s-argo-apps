@@ -1,0 +1,4 @@
+flaresolverr:
+ image:
+  repository: ghcr.io/flaresolverr/flaresolverr
+  tag: latest

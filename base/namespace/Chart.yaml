@@ -1,0 +1,4 @@
+apiVersion: v1
+name: loggingNS
+description: A Helm chart for logging namespace
+version: 1.0.0

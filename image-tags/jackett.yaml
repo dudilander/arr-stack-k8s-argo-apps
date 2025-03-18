@@ -1,0 +1,4 @@
+jackett:
+ image:
+  repository: ghcr.io/linuxserver/jackett
+  tag: latest

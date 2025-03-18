@@ -1,0 +1,4 @@
+prowlarr:
+ image:
+  repository: lscr.io/linuxserver/prowlarr
+  tag: latest

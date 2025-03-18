@@ -6,9 +6,19 @@ environments:
 
 ---
 releases:
+  - name:  {{ .Values.media.namespace }}
+    chart: ../base/namespace
+    namespace: {{ .Values.media.namespace }}
+
   - name: argocd
     chart: ../base/argocd/argocd
     namespace: {{ .Values.argocd.namespace }}
     values:
       - ./argocd/values.yaml
+
+  - name: argocd-apps
+    chart: ../base/argocd/argocd-apps
+    namespace: {{ .Values.argocd.namespace }}
+    values:
+      - ./argocd-apps/values.yaml
  

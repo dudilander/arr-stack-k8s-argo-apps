@@ -1,0 +1,4 @@
+plex:
+ image:
+  repository: lscr.io/linuxserver/plex
+  tag: latest
