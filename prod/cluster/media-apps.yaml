@@ -1,8 +1,8 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: sonarr
-  namespace: media
+  name: media-apps
+  namespace: argocd
   finalizers:
   - resources-finalizer.argocd.argoproj.io
 spec:
@@ -13,11 +13,9 @@ spec:
   source:
     repoURL: https://github.com/dudilander/arr-stack-k8s-argo-apps.git
     targetRevision: main
-    path: media/sonarr
+    path: prod/cluster-components/media-apps
     plugin:
-      env:
-        - name: ENV_NAME
-          value: prod
+      name: helmfile
   syncPolicy:
     automated:
       selfHeal: true

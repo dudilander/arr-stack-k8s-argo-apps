@@ -1,0 +1,19 @@
+environments:
+  #prod:
+  default:
+    values:
+      - ../../global-values.yaml
+      - ../../../image-tags/*.yaml
+
+---
+releases:
+  - name: sonarr
+    chart: ../../../base/sonarr/sonarr
+    namespace: {{ .Values.media.namespace }}
+    values:
+      - ./sonarr/sonarr/values.yaml
+    set:
+      - name: image.repository
+        value: {{ .Values.sonarr.image.repository }}
+      - name: image.tag
+        value: {{ .Values.sonarr.image.tag }}

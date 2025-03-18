@@ -1,23 +1,21 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: argocd-apps
+  name: argocd
   namespace: argocd
   finalizers:
   - resources-finalizer.argocd.argoproj.io
 spec:
   destination:
     server: https://kubernetes.default.svc
-    namespace: argocd
+    namespace: prod/cluster-components/argocd
   project: default
   source:
     repoURL: https://github.com/dudilander/arr-stack-k8s-argo-apps.git
     targetRevision: main
-    path: argocd/argocd-apps
+    path: prod/cluster-components/argocd
     plugin:
-      env:
-        - name: ENV_NAME
-          value: prod
+      name: helmfile
   syncPolicy:
     automated:
       selfHeal: true
