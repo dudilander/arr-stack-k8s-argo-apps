@@ -1,13 +1,12 @@
 environments:
   prod:
     values:
-      - ../../environments/prod/global-values.yaml
+      - ../environments/prod/global-values.yaml
 
 ---
 releases:
   - name: argocd
-    chart: ../../base/argocd/argocd
-    namespace: {{ .Values.mediamanager.namespace }}
+    chart: ../base/argocd/argocd
     values:
       - ./argocd/values.yaml
  

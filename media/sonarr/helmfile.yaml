@@ -1,13 +1,13 @@
 environments:
   prod:
     values:
-      - ../../environments/prod/global-values.yaml
+      - ../environments/prod/global-values.yaml
 
 ---
 releases:
   - name: sonarr
-    chart: ../../base/sonarr/sonarr
-    namespace: {{ .Values.mediamanager.namespace }}
+    chart: ../base/sonarr/sonarr
+    namespace: {{ .Values.media.namespace }}
     values:
       - ./sonarr/values.yaml
  
