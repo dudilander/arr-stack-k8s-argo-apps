@@ -1,5 +1,6 @@
 environments:
-  prod:
+  #prod:
+  default:
     values:
       - ../environments/prod/global-values.yaml
 
