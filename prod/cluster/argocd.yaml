@@ -16,6 +16,9 @@ spec:
     path: prod/cluster-components/argocd-apps
     plugin:
       name: helmfile
+      env:
+       - name: ARGOCD_APP_NAMESPACE
+         value: "my-argocd-project"
   syncPolicy:
     automated:
       selfHeal: true
