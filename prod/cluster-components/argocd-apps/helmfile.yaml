@@ -6,6 +6,10 @@ environments:
 
 ---
 releases:
+  - name:  {{ .Values.media.namespace }}
+    chart: ../../../base/namespace
+    namespace: {{ .Values.media.namespace }}
+
   - name: app-of-apps
     chart: ../../../base/argocd-apps
     namespace: {{ .Values.argocd.namespace }}

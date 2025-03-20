@@ -5,9 +5,20 @@ environments:
       - ../prod/global-values.yaml
 
 ---
+
+repositories:
+  - name: argo
+    url: https://argoproj.github.io/argo-helm
+
 releases:
   - name: argocd
-    chart: ../base/argocd
+    chart: argo/argo-cd
+    version: 4.5.3
     namespace: {{ .Values.argocd.namespace }}
     values:
       - ./argocd/values.yaml
+    # env:
+    #   - name: ENV_NAME
+    #     value: "prod"
+    #   - name: HELMFILE_GLOBAL_OPTIONS
+    #     value: '--environment $${ENV_NAME}'

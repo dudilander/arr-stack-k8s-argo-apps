@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: media-apps
+  name: nfs-mount
   namespace: argocd
   finalizers:
   - resources-finalizer.argocd.argoproj.io
@@ -13,7 +13,7 @@ spec:
   source:
     repoURL: https://github.com/dudilander/arr-stack-k8s-argo-apps.git
     targetRevision: main
-    path: prod/cluster-components/media-apps
+    path: prod/cluster-components/nfs-mount
     plugin:
       name: helmfile
   syncPolicy:
@@ -21,3 +21,4 @@ spec:
       selfHeal: true
     syncOptions:
     - CreateNamespace=true
+

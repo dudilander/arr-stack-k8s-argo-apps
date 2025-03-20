@@ -1,18 +1,18 @@
 # -- Deploy Argo CD Applications within this helm release
 # @default -- `{}` (See [values.yaml])
 ## Ref: https://github.com/argoproj/argo-cd/blob/master/docs/operator-manual/
-applications: {}
-#  guestbook:
-#    namespace: argocd
+ applications: {} 
+#  sonarr:
+#    namespace: media
 #    additionalLabels: {}
 #    additionalAnnotations: {}
 #    finalizers:
 #    - resources-finalizer.argocd.argoproj.io
-#    project: guestbook
+#    project: default
 #    source:
-#      repoURL: https://github.com/argoproj/argocd-example-apps.git
+#      repoURL: https://github.com/dudilander/arr-stack-k8s-argo-apps.git
 #      targetRevision: HEAD
-#      path: guestbook
+#      path: media/sonarr
 #      directory:
 #        recurse: true
 #    # ArgoCD v2.6 or later
@@ -42,10 +42,11 @@ applications: {}
 #    - name: url
 #      value: https://argoproj.github.io/
 
+
 # -- Deploy Argo CD Projects within this helm release
 # @default -- `{}` (See [values.yaml])
 ## Ref: https://github.com/argoproj/argo-cd/blob/master/docs/operator-manual/
-projects: {}
+ projects: {}
 #  guestbook:
 #    namespace: argocd
 #    additionalLabels: {}
@@ -92,7 +93,7 @@ projects: {}
 # -- Deploy Argo CD ApplicationSets within this helm release
 # @default -- `{}` (See [values.yaml])
 ## Ref: https://argo-cd.readthedocs.io/en/stable/operator-manual/applicationset/
-applicationsets: {}
+ applicationsets: {}
 #  guestbook:
 #    namespace: argocd
 #    additionalLabels: {}
