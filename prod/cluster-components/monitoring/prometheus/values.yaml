@@ -1,2 +1,2 @@
-pushgateway:
+prometheus-pushgateway:
   enabled: false
