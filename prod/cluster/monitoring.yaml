@@ -1,14 +1,14 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: Monitoring
+  name: monitoring
   namespace: argocd
   finalizers:
   - resources-finalizer.argocd.argoproj.io
 spec:
   destination:
     server: https://kubernetes.default.svc
-    namespace: Monitoring
+    namespace: monitoring
   project: default
   source:
     repoURL: https://github.com/dudilander/arr-stack-k8s-argo-apps.git
