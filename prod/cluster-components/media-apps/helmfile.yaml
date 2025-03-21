@@ -22,3 +22,14 @@ releases:
         value: {{ .Values.sonarr.image.repository }}
       - name: image.tag
         value: {{ .Values.sonarr.image.tag }}
+
+  - name: radarr
+    chart: ../../../base/radarr/radarr
+    namespace: {{ .Values.media.namespace }}
+    values:
+      - ./radarr/radarr/values.yaml
+    set:
+      - name: image.repository
+        value: {{ .Values.radarr.image.repository }}
+      - name: image.tag
+        value: {{ .Values.radarr.image.tag }}
