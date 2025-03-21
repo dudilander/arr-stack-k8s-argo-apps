@@ -38,7 +38,7 @@ releases:
     namespace: media
     chart: ../../base-helm-charts/prowlarr
     values:
-      - ./media/prowlarr/values.yaml
+      - ./prowlarr/prowlarr/values.yaml
     set:
       - name: image.repository
         value: {{ .Values.prowlarr.image.repository }}
