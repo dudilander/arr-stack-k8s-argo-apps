@@ -69,16 +69,16 @@ releases:
       - name: image.tag
         value: {{ .Values.jackett.image.tag }}
 
-  # - name: bazarr
-  #   namespace: media
-  #   chart: ../../base-helm-charts/bazarr
-  #   values:
-  #     - ./media/bazarr/values.yaml
-  #   set:
-  #     - name: image.repository
-  #       value: {{ .Values.bazarr.image.repository }}
-  #     - name: image.tag
-  #       value: {{ .Values.bazarr.image.tag }}
+  - name: bazarr
+    namespace: media
+    chart: ../../../base/bazarr/bazarr
+    values:
+      - ./bazarr/bazarr/values.yaml
+    set:
+      - name: image.repository
+        value: {{ .Values.bazarr.image.repository }}
+      - name: image.tag
+        value: {{ .Values.bazarr.image.tag }}
 
   # - name: plex
   #   namespace: media

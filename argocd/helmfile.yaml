@@ -17,8 +17,3 @@ releases:
     namespace: {{ .Values.argocd.namespace }}
     values:
       - ./argocd/values.yaml
-    # env:
-    #   - name: ENV_NAME
-    #     value: "prod"
-    #   - name: HELMFILE_GLOBAL_OPTIONS
-    #     value: '--environment $${ENV_NAME}'
