@@ -12,13 +12,14 @@ spec:
   project: default
   source:
     repoURL: https://github.com/dudilander/arr-stack-k8s-argo-apps.git
-    targetRevision: main
+    targetRevision: HEAD
     path: prod/cluster-components/utilities
     plugin:
       name: helmfile
   syncPolicy:
     autautomated:
       selfHeal: true
+      rune: true
     syncOptions:
     - CreateNamespace=true
 
