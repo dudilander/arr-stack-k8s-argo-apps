@@ -96,7 +96,7 @@ persistence:
     accessMode: ReadWriteOnce
     size: 100Gi
     skipuninstall: false
-    existingClaim: nfs-mount-config
+    existingClaim: config
 
   transmission:
     enabled: true
@@ -106,4 +106,4 @@ persistence:
     size: 100Gi
     ## Do not delete the pvc upon helm uninstall
     skipuninstall: false
-    existingClaim: nfs-mount-transmission
+    existingClaim: transmission
