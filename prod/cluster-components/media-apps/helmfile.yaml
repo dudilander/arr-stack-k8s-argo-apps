@@ -10,6 +10,9 @@ environments:
 repositories:
   - name: bjw-s
     url: https://bjw-s.github.io/helm-charts
+  - name: common
+    repository: https://library-charts.k8s-at-home.com
+    version: 4.5.2
 
 releases:
   - name: sonarr
