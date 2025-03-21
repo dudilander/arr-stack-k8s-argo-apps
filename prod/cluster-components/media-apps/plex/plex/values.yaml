@@ -88,7 +88,7 @@ persistence:
     mountPath: /media
     accessMode: ReadWriteOnce
     size: 100Gi
-    existingClaim: nfs-mount-media
+    existingClaim: media
 
 # -- Configure the Security Context for the Pod
 podSecurityContext: {}
