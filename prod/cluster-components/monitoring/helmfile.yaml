@@ -13,7 +13,7 @@ repositories:
 releases:
   - name: prometheus
     chart: prometheus
-    version: prometheus-25.9.0
+    version: 25.3.1
     namespace: {{ .Values.monitoring.namespace }}
     # values:
     #   - ./prometheus/values.yaml
