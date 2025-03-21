@@ -12,12 +12,13 @@ spec:
   project: default
   source:
     repoURL: https://github.com/dudilander/arr-stack-k8s-argo-apps.git
-    targetRevision: main
+    targetRevision: HEAD
     path: prod/cluster-components/media-apps
     plugin:
       name: helmfile
   syncPolicy:
     autautomated:
+      prune: true
       selfHeal: true
     syncOptions:
     - CreateNamespace=true
