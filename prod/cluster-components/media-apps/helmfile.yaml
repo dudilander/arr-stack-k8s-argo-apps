@@ -80,15 +80,15 @@ releases:
       - name: image.tag
         value: {{ .Values.bazarr.image.tag }}
 
-  # - name: plex
-  #   namespace: media
-  #   chart: ../../base-helm-charts/plex
-  #   values:
-  #     - ./media/plex/values.yaml
-  #   set:
-  #     - name: image.repository
-  #       value: {{ .Values.plex.image.repository }}
-  #     - name: image.tag
-  #       value: {{ .Values.plex.image.tag }}
+  - name: plex
+    namespace: media
+    chart: ../../../base/plex/plex
+    values:
+      - ./plex/plex/values.yaml
+    set:
+      - name: image.repository
+        value: {{ .Values.plex.image.repository }}
+      - name: image.tag
+        value: {{ .Values.plex.image.tag }}
   
   

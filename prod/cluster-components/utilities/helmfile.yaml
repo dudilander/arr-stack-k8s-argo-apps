@@ -25,3 +25,9 @@ releases:
     chart: ../../../base/nfs-mount/transmission
     # values:
     #   - ./media/nfs-mount/config/values.yaml
+
+  - name: cloudflare-tunnel
+    namespace: utilities
+    chart: ../../../base/cloudflare-tunnel/cloudflare-tunnel
+    values:
+      - ./cloudflare-tunnel/cloudflare-tunnel/values.yaml
