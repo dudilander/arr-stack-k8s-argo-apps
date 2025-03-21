@@ -44,3 +44,14 @@ releases:
         value: {{ .Values.prowlarr.image.repository }}
       - name: image.tag
         value: {{ .Values.prowlarr.image.tag }}
+  
+  - name: transmission
+    namespace: media
+    chart: ../../../base/transmission/transmission
+    values:
+      - ./transmission/transmission/values.yaml
+    set:
+      - name: image.repository
+        value: {{ .Values.transmission.image.repository }}
+      - name: image.tag
+        value: {{ .Values.transmission.image.tag }}
