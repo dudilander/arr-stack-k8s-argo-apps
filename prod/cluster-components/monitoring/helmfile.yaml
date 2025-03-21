@@ -15,5 +15,5 @@ releases:
     chart: prometheus-community/prometheus
     version: 27.5.1
     namespace: {{ .Values.monitoring.namespace }}
-    # values:
-    #   - ./prometheus/values.yaml
+     values:
+       - ./prometheus/values.yaml
