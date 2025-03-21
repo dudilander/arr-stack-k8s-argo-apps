@@ -11,7 +11,7 @@ repositories:
     url: https://prometheus-community.github.io/helm-charts
 
 releases:
-  - name: prometheus
+  - name: prometheus-community/prometheus
     chart: prometheus
     version: 25.3.1
     namespace: {{ .Values.monitoring.namespace }}
