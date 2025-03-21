@@ -33,3 +33,14 @@ releases:
         value: {{ .Values.radarr.image.repository }}
       - name: image.tag
         value: {{ .Values.radarr.image.tag }}
+
+  - name: prowlarr
+    namespace: media
+    chart: ../../base-helm-charts/prowlarr
+    values:
+      - ./media/prowlarr/values.yaml
+    set:
+      - name: image.repository
+        value: {{ .Values.prowlarr.image.repository }}
+      - name: image.tag
+        value: {{ .Values.prowlarr.image.tag }}
