@@ -4,8 +4,13 @@ environments:
     values:
       - ../../global-values.yaml
       - ../../../image-tags/*.yaml
-
+ 
 ---
+
+repositories:
+  - name: bjw-s
+    url: https://bjw-s.github.io/helm-charts
+
 releases:
   - name: sonarr
     chart: ../../../base/sonarr/sonarr
