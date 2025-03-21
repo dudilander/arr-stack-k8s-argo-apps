@@ -68,14 +68,14 @@ persistence:
     subPath: prowlarr
     accessMode: ReadWriteOnce
     size: 100Gi
-    existingClaim: nfs-mount-config
+    existingClaim: config
 
   media:
     enabled: true
     mountPath: /media
     accessMode: ReadWriteOnce
     size: 100Gi
-    existingClaim: nfs-mount-media
+    existingClaim: media
 
 metrics:
   # -- Enable and configure Exportarr sidecar and Prometheus serviceMonitor.
