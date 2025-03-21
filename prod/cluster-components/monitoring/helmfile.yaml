@@ -13,7 +13,7 @@ repositories:
 releases:
   - name: prometheus
     chart: prometheus
-    version: 25.9.0
-    namespace: {{ .Values.argocd.namespace }}
-    values:
-      - ./prometheus/values.yaml
+    version: prometheus-25.9.0
+    namespace: {{ .Values.monitoring.namespace }}
+    # values:
+    #   - ./prometheus/values.yaml

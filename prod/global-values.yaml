@@ -4,4 +4,7 @@ media:
     chartVersion: "1.9.0"
     
 argocd:
-    namespace: argocd
+  namespace: argocd
+
+monitoring:
+  namespace: monitoring
