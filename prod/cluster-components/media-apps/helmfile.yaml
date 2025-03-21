@@ -57,3 +57,38 @@ releases:
         value: {{ .Values.transmission.image.repository }}
       - name: image.tag
         value: {{ .Values.transmission.image.tag }}
+  
+  - name: jackett
+    namespace: media
+    chart: ../../../base/jackett/jackett
+    values:
+      - ./jackett/jackett/values.yaml
+    set:
+      - name: image.repository
+        value: {{ .Values.jackett.image.repository }}
+      - name: image.tag
+        value: {{ .Values.jackett.image.tag }}
+
+  # - name: bazarr
+  #   namespace: media
+  #   chart: ../../base-helm-charts/bazarr
+  #   values:
+  #     - ./media/bazarr/values.yaml
+  #   set:
+  #     - name: image.repository
+  #       value: {{ .Values.bazarr.image.repository }}
+  #     - name: image.tag
+  #       value: {{ .Values.bazarr.image.tag }}
+
+  # - name: plex
+  #   namespace: media
+  #   chart: ../../base-helm-charts/plex
+  #   values:
+  #     - ./media/plex/values.yaml
+  #   set:
+  #     - name: image.repository
+  #       value: {{ .Values.plex.image.repository }}
+  #     - name: image.tag
+  #       value: {{ .Values.plex.image.tag }}
+  
+  
